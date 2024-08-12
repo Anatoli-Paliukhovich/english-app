@@ -6,6 +6,7 @@
   left: 0;
   width: 100%;
   z-index: 50;
+  background-color: inherit;
   &__container {
     max-width: toRem(1470);
     padding: toRem(0) toRem(15);
@@ -33,29 +34,92 @@
   // .header__menu
   &__menu {
   }
-  // .header__icon
-  &__icon {
-  }
-}
-.menu {
-  // .menu__list
   &__list {
     display: flex;
     gap: calc(toRem(20) + (40 - 20) * ((100vw - toRem(768)) / (1440 - 768)));
     flex-wrap: wrap;
     align-items: center;
+    font-size: toRem(18);
   }
-  // .menu__item
   &__item {
+    position: relative;
+
+    &:last-child {
+      margin-left: calc(
+        toRem(0) + (100 - 50) * ((100vw - toRem(380)) / (1440 - 380))
+      );
+    }
+
+    @media (min-width: toRem(900)) {
+      padding: toRem(10) 0px;
+    }
   }
-  // .menu__link
   &__link {
-    color: #403f3d;
+    color: $text-light;
     &:hover.stretch_line::after {
       width: 100%;
     }
   }
+  @media (max-width: toRem(900)) {
+    // .header__menu
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: $background-body;
+      padding: toRem(80) toRem(30) toRem(30) toRem(30);
+      transition: right ease 0.5s;
+      overflow: auto;
+      //Псевдо плашка
+      &:before {
+        content: "";
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: toRem(60);
+        background-color: $background-body;
+        transition: width ease 0.5s;
+      }
+      &._active {
+        right: 0;
+      }
+      &._active:before {
+        width: 100%;
+      }
+    }
+    // .header__list
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(50);
+      flex-wrap: wrap;
+    }
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      transform: translateX(100vw);
+      transition: all ease 0.5s;
+      font-size: toRem(24);
+    }
+    &__menu._active .header__item {
+      transform: translateX(0);
+    }
+    &__link {
+      text-align: center;
+      color: $text-dark;
+    }
+  }
 }
+@for $i from 1 through 5 {
+  .header__item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.15s;
+  }
+}
+
 .stretch_line {
   position: relative;
   &::after {
@@ -66,7 +130,7 @@
     transform: translate(-50%);
     height: toRem(2);
     width: 0%;
-    background-color: rgba(64, 63, 61, 1);
+    background-color: $text-accent;
     transition: all linear 0.5s;
   }
 }
@@ -76,12 +140,15 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  &:hover.stretch_line::after {
-    width: 100%;
-  }
   &__text {
-    color: #403f3d;
+    color: $text-light;
     text-align: center;
+    @media (max-width: toRem(900)) {
+      color: $text-dark;
+    }
+    &:hover.stretch_line::after {
+      width: 100%;
+    }
   }
   // .icon__img
   &__img img {
@@ -89,9 +156,64 @@
     height: toRem(30);
   }
 }
+//Burger Menu
 .burger {
   // .burger__menu
   &__menu {
     display: none;
+    @media (max-width: toRem(900)) {
+      z-index: 10;
+      display: block;
+      position: relative;
+      width: toRem(30);
+      height: toRem(18);
+      cursor: pointer;
+      & span {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        height: toRem(2.2);
+        width: 100%;
+        background-color: $text-light;
+        transition: all ease 0.5s;
+        transform: rotate(-720deg);
+      }
+      & span::before {
+        content: "";
+        position: absolute;
+        top: toRem(-8);
+        height: toRem(2.2);
+        width: 100%;
+        transition: all ease 0.3;
+        background-color: $text-light;
+        transition: all linear 0.5s;
+      }
+      & span::after {
+        content: "";
+        position: absolute;
+        top: toRem(8);
+        height: toRem(2.2);
+        width: 80%;
+        transition: all ease 0.3;
+        background-color: $text-light;
+        transition: all linear 0.5s;
+      }
+      &._active span {
+        transition: all ease 0.5s;
+        transform: rotate(720deg);
+        background-color: transparent;
+        &::before {
+          transform: rotate(45deg) translate(toRem(5), toRem(8));
+          background-color: $text-dark;
+          transition: all linear 0.5s;
+        }
+        &::after {
+          width: 100%;
+          transform: rotate(-45deg) translate(toRem(3), toRem(-7));
+          background-color: $text-dark;
+          transition: all linear 0.5s;
+        }
+      }
+    }
   }
 }

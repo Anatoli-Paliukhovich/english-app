@@ -1,65 +1,55 @@
 import styles from "./header.module.scss";
-
+import Logo from "../../assets/logo.png";
+import { menuLinks } from "../../data";
+import GrammarTest from "./GrammarTest";
+import { useAppSelector, useAppDispatch } from "../../hooks";
+import { setBurger } from "../../features/header/headerSlice";
 export default function Header() {
-  const menuLinks = [
-    {
-      id: 1,
-      title: "Grammar rules",
-      href: "",
-    },
-    {
-      id: 2,
-      title: "Olympiads",
-      href: "",
-    },
-    {
-      id: 3,
-      title: "Centralized examination",
-      href: "",
-    },
-    {
-      id: 4,
-      title: "Contact us",
-      href: "",
-    },
-  ];
+  const { isBurger } = useAppSelector((state) => state.header);
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <header className={styles.header}>
         <div className={styles.header__container}>
           <div className={styles.header__body}>
             <a href="#" className={styles.header__logo}>
-              <img src="/src/assets/logo.png" alt="logo" />
+              <img src={Logo} alt="logo" />
             </a>
-            <nav className={styles.header__menu}>
-              <ul className={styles.menu__list}>
+            <nav
+              className={
+                isBurger
+                  ? `${styles.header__menu} ${styles._active}`
+                  : `${styles.header__menu}`
+              }
+            >
+              <ul className={styles.header__list}>
                 {menuLinks.length > 0 &&
                   menuLinks.map((link) => {
                     return (
-                      <li key={link.id} className={styles.menu__item}>
+                      <li key={link.id} className={styles.header__item}>
                         <a
                           href={link.href}
-                          className={`${styles.menu__link} ${styles.stretch_line}`}
+                          className={`${styles.header__link} ${styles.stretch_line}`}
                         >
                           {link.title}
                         </a>
                       </li>
                     );
                   })}
+                <GrammarTest></GrammarTest>
               </ul>
             </nav>
-            <a
-              href="./menu_page/second_page.html"
-              className={`${styles.icon} ${styles.stretch_line}`}
+            <div
+              onClick={() => dispatch(setBurger(!isBurger))}
+              className={
+                isBurger
+                  ? `${styles.burger__menu} ${styles._active}`
+                  : `${styles.burger__menu}`
+              }
             >
-              <div className={styles.icon__text}>
-                Grammar <br /> tests
-              </div>
-              <div className={styles.icon__img}>
-                <img src="/src/assets/test.png" alt="cup" />
-              </div>
-            </a>
-            <div className={styles.burger__menu}></div>
+              <span></span>
+            </div>
           </div>
         </div>
       </header>
