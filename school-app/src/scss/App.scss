@@ -21,3 +21,30 @@ body {
   padding: toRem(0) toRem(15);
   margin: 0 auto;
 }
+//general
+._title {
+  font-size: toRem(60);
+  font-weight: 600;
+  line-height: 125%;
+  text-align: center;
+  color: $text-dark;
+  padding: 0 0 toRem(40) 0;
+}
+._title-decor {
+  color: $text-accent;
+  font-style: italic;
+}
+._text {
+  /* Desktop/Body/medium */
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 150%;
+  padding: toRem(40) 0;
+  max-width: toRem(500);
+  margin: 0px auto;
+  text-align: center;
+}
+//home
+.about {
+  padding: toRem(80) 0;
+}

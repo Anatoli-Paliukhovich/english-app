@@ -7,11 +7,15 @@
   width: 100%;
   z-index: 50;
   background-color: inherit;
+  &.scrolled {
+    background-color: rgb(64, 63, 61, 0.8);
+  }
   &__container {
     max-width: toRem(1470);
     padding: toRem(0) toRem(15);
     margin: 0 auto;
   }
+
   // .header__body
   &__body {
     display: flex;
@@ -130,7 +134,7 @@
     transform: translate(-50%);
     height: toRem(2);
     width: 0%;
-    background-color: $text-accent;
+    background-color: $text-light;
     transition: all linear 0.5s;
   }
 }

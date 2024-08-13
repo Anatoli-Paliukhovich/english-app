@@ -40,7 +40,7 @@
   // .hero__title
   &__title {
     font-size: calc(
-      toRem(36) + (72 - 36) * ((100vw - toRem(380)) / (1440 - 380))
+      toRem(42) + (72 - 42) * ((100vw - toRem(380)) / (1440 - 380))
     );
     font-weight: 600;
     line-height: 105%;
@@ -51,7 +51,7 @@
   &__text {
     color: #e1d4c9;
     line-height: 150%;
-    max-width: toRem(630);
+    max-width: toRem(586);
   }
   &__preudo {
   }
@@ -95,7 +95,6 @@
 .title_dec {
   color: #b0907a;
   font-style: italic;
-  font-family: "Inter Semi Bold Italic";
 }
 .btn {
 }
