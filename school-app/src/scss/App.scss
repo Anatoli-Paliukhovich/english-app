@@ -7,6 +7,9 @@ html {
 body {
   font-family: Inter;
   background-color: $background-body;
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 #root {

@@ -1,0 +1,56 @@
+@import "../../scss/variables.scss";
+
+.tests {
+  padding: toRem(80);
+
+  &__container {
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: toRem(30);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    width: toRem(250);
+    min-height: toRem(300);
+    border-radius: toRem(10);
+    padding: toRem(20);
+    color: $text-light;
+    border: toRem(1) solid $text-light;
+    background: url("../../assets/test-background.png") 50% / cover no-repeat;
+    cursor: pointer;
+    transition: all linear 0.3s;
+    transform: scale(1);
+    &:hover {
+      transform: scale(1.02);
+      transition: all linear 0.3s;
+      box-shadow: toRem(1) toRem(2) toRem(10) $text-dark;
+    }
+    &:hover .item__icon {
+      opacity: 1;
+      visibility: visible;
+      transition: all linear 0.3s;
+      margin-left: toRem(0);
+    }
+    .item__info {
+      letter-spacing: toRem(5);
+    }
+    .item__title {
+      font-size: toRem(22);
+      font-weight: 600;
+    }
+    .item__icon {
+      color: white;
+      font-size: toRem(40);
+      opacity: 0;
+      visibility: hidden;
+      margin-left: toRem(-10);
+      transition: all linear 0.3s;
+    }
+  }
+}

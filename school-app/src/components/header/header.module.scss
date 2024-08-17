@@ -9,6 +9,7 @@
   background-color: inherit;
   &.scrolled {
     background-color: rgb(64, 63, 61, 0.8);
+    transition: 3s;
   }
   &__container {
     max-width: toRem(1470);
