@@ -24,4 +24,13 @@
     color: $text-light;
     box-shadow: toRem(1) toRem(2) toRem(10) $text-dark;
   }
+  &_dsl {
+    @extend .btn;
+    color: rgba(64, 63, 61, 0.498);
+    &:hover {
+      background: inherit;
+      color: rgba(64, 63, 61, 0.498);
+      box-shadow: none;
+    }
+  }
 }

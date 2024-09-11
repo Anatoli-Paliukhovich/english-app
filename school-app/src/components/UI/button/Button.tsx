@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import Test from "../../../assets/test.png";
+import Test from "../../../assets/test.svg";
 import styles from "./button.module.scss";
 type ButtonProps = PropsWithChildren<{}>;
 

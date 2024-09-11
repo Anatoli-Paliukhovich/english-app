@@ -4,6 +4,7 @@ import { accordionData } from "../../data";
 
 type AccordionData = {
   id: number;
+  url: string;
   title: string;
   description: string;
 };

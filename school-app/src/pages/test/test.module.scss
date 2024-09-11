@@ -1,0 +1,8 @@
+@import "../../scss/variables.scss";
+
+.test__page {
+  padding: toRem(100) toRem(0);
+}
+.test__container {
+  @include container;
+}

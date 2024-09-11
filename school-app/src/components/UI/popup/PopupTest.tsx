@@ -16,12 +16,10 @@ export default function PopupTest() {
     (state) => state.tests
   );
   const quizData = currentTest.quiz;
-
   const dispatch = useAppDispatch();
 
   const getElement = document.getElementById("modal") as HTMLElement;
   const answerRefs = useRef<Array<HTMLElement | null>>([]);
-
   useEffect(() => {
     answerRefs.current = answerRefs.current.slice(
       0,
@@ -89,7 +87,10 @@ export default function PopupTest() {
         <div className={styles.popup__content}>
           <div
             className={styles.popup__close}
-            onClick={() => dispatch(setIsOpen(false))}
+            onClick={() => {
+              dispatch(setIsOpen(false));
+              goToNextQuestion();
+            }}
           >
             <img src={Cross} alt="cross" />
           </div>
@@ -126,7 +127,7 @@ export default function PopupTest() {
                   })}
                 </ul>
                 <ButtonGeneral onClick={goToNextQuestion}>
-                  {index === quizData.length - 1 ? "Finish" : "Next"}
+                  {index === quizData.length - 1 && lock ? "Finish" : "Next"}
                 </ButtonGeneral>
                 <div className={styles.popup__bottom}>
                   {index + 1} of {quizData.length} questions

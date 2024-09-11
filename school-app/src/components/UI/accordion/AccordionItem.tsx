@@ -1,6 +1,8 @@
 import styles from "./accordion.module.scss";
+
 type AccordionItemProps = {
   onToggle: () => void;
+  url: string;
   title: string;
   description: string;
   id: number;
@@ -8,6 +10,7 @@ type AccordionItemProps = {
 };
 export default function AccordionItem({
   onToggle,
+  url,
   title,
   description,
   id,

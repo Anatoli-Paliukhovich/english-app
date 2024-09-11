@@ -1,16 +1,18 @@
 import styles from "./header.module.scss";
 import { useEffect } from "react";
-import Logo from "../../assets/logo.png";
-import { menuLinks } from "../../data";
 import GrammarTest from "./GrammarTest";
+import BackToHome from "./BackToHome";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { setBurger, setScrolled } from "../../features/header/headerSlice";
-
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
-  const { isBurger, isScrolled } = useAppSelector((state) => state.header);
+  const navigate = useNavigate();
+  const { isBurger, isScrolled, links } = useAppSelector(
+    (state) => state.header
+  );
   const dispatch = useAppDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +33,15 @@ export default function Header() {
   return (
     <>
       <header
-        className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
+        className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+          location.pathname !== "/" ? styles.path : ""
+        }`}
       >
         <div className={styles.header__container}>
           <div className={styles.header__body}>
-            <a href="#" className={styles.header__logo}>
-              <img src={Logo} alt="logo" />
-            </a>
+            <Link to="/" className={styles.header__logo}>
+              <div>EnglishEase</div>
+            </Link>
             <nav
               className={
                 isBurger
@@ -46,12 +50,13 @@ export default function Header() {
               }
             >
               <ul className={styles.header__list}>
-                {menuLinks.length > 0 &&
-                  menuLinks.map((link) => {
+                {links.length > 0 &&
+                  links.map((link) => {
                     return (
-                      <li key={link.id} className={styles.header__item}>
+                      <li key={link.title} className={styles.header__item}>
                         <a
-                          href={link.href}
+                          onClick={() => navigate("/", { replace: true })}
+                          href={link.href.toLowerCase()}
                           className={`${styles.header__link} ${styles.stretch_line}`}
                         >
                           {link.title}
@@ -59,9 +64,23 @@ export default function Header() {
                       </li>
                     );
                   })}
-                <GrammarTest></GrammarTest>
+                {location.pathname !== "/test" && isBurger ? (
+                  <GrammarTest></GrammarTest>
+                ) : (
+                  ""
+                )}
+                {location.pathname !== "/" && isBurger ? (
+                  <BackToHome></BackToHome>
+                ) : (
+                  ""
+                )}
               </ul>
             </nav>
+            {location.pathname !== "/test" ? (
+              <GrammarTest></GrammarTest>
+            ) : (
+              <BackToHome></BackToHome>
+            )}
             <div
               onClick={() => dispatch(setBurger(!isBurger))}
               className={

@@ -1,0 +1,41 @@
+@import "../../../scss/variables.scss";
+.search {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 toRem(40) toRem(70);
+  margin-left: calc(
+    toRem(20) + (70 - 20) * ((100vw - toRem(380)) / (1440 - 380))
+  );
+}
+.input {
+  border: toRem(1) solid $background-container;
+  padding: toRem(12) toRem(20) toRem(12) toRem(45);
+  border-radius: toRem(10);
+  font-size: toRem(18);
+  background-color: inherit;
+  max-width: toRem(300);
+  &:focus {
+    border: toRem(1.2) solid $background-container;
+    box-shadow: toRem(1) toRem(1) toRem(5) $background-backdrop;
+  }
+}
+.search__icon {
+  width: toRem(45);
+  height: toRem(45);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: toRem(7);
+}
+.clear__icon {
+  width: toRem(45);
+  height: toRem(45);
+  position: absolute;
+  top: toRem(1);
+  right: 0;
+  padding: toRem(3);
+  cursor: pointer;
+  &:hover path {
+    fill: rgb(64, 63, 61);
+  }
+}

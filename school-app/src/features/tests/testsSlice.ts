@@ -6,6 +6,7 @@ type CardState = {
   id: number;
   title: string;
   description: string;
+  url: string;
   quiz: QuizState[];
 };
 
@@ -24,6 +25,7 @@ type TestsState = {
   score: number;
   result: boolean;
   currentTest: CardState;
+  searchQuery: string;
 };
 
 const initialState: TestsState = {
@@ -33,10 +35,12 @@ const initialState: TestsState = {
   lock: false,
   score: 0,
   result: false,
+  searchQuery: "",
   currentTest: {
     id: 1,
     title: "",
     description: "",
+    url: "",
     quiz: [
       {
         id: 1,
@@ -69,6 +73,9 @@ const testsSlice = createSlice({
     setCurrentTest: (state, action: PayloadAction<CardState>) => {
       state.currentTest = action.payload;
     },
+    setSearchQuery: (state, action: PayloadAction<string>) => {
+      state.searchQuery = action.payload;
+    },
   },
 });
 
@@ -80,4 +87,5 @@ export const {
   setScore,
   setResult,
   setCurrentTest,
+  setSearchQuery,
 } = testsSlice.actions;

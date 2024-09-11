@@ -1,5 +1,6 @@
 import styles from "./tests.module.scss";
 import { useAppSelector, useAppDispatch } from "../../hooks";
+import Search from "../UI/search/Search";
 import {
   setIsOpen,
   setCurrentTest,
@@ -9,25 +10,38 @@ import {
   setScore,
 } from "../../features/tests/testsSlice";
 import PopupTest from "../UI/popup/PopupTest";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Tests() {
   const { isOpen, testData } = useAppSelector((state) => state.tests);
+  const { searchQuery, value } = useAppSelector((state) => state.search);
   const dispatch = useAppDispatch();
-  const bodyElement = document.body;
+  const inputRef = useRef<HTMLInputElement>(null);
+  const filteredData = testData.filter((test) => {
+    return (
+      test.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      test.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
   useEffect(() => {
+    inputRef.current?.focus();
+  }, [value, searchQuery]);
+  useEffect(() => {
+    const bodyElement = document.body;
     if (isOpen) {
       bodyElement.classList.add("lock");
     } else if (!isOpen) {
       bodyElement.classList.remove("lock");
     }
   }, [isOpen]);
+
   return (
     <>
       <div className={styles.tests}>
         <div className={styles.tests__container}>
+          <Search ref={inputRef}></Search>
           <div className={styles.tests__body}>
-            {testData.map((test) => {
+            {filteredData.map((test) => {
               return (
                 <div
                   key={test.id}
@@ -37,13 +51,18 @@ export default function Tests() {
                     dispatch(setIsOpen(true));
                     dispatch(setIndex(0));
                     dispatch(setLock(false));
-                    dispatch(setResult(false));
                     dispatch(setScore(() => 0));
+                    dispatch(setResult(false));
                   }}
                 >
                   <div className={styles.item__info}>{test.description}</div>
                   <h3 className={styles.item__title}>{test.title}</h3>
                   <span className={styles.item__icon}>&#9755;</span>
+                  <img
+                    src={test.url}
+                    alt={test.title}
+                    className={styles.item__img}
+                  />
                 </div>
               );
             })}

@@ -19,14 +19,15 @@ body {
   overflow: clip;
 }
 
-[class*="__container"] {
-  max-width: toRem(1470);
-  padding: toRem(0) toRem(15);
-  margin: 0 auto;
+[className*="__container"] {
+  @include container;
 }
 //general
 ._title {
   font-size: toRem(60);
+  font-size: calc(
+    toRem(32) + (60 - 32) * ((100vw - toRem(380)) / (1440 - 380))
+  );
   font-weight: 600;
   line-height: 125%;
   text-align: center;
@@ -42,12 +43,38 @@ body {
   color: $text-dark;
   font-weight: 400;
   line-height: 150%;
-  padding: toRem(40) 0;
+  padding: toRem(0) 0 toRem(40) toRem(0);
   max-width: toRem(500);
   margin: 0px auto;
   text-align: center;
 }
 //home
 .about {
-  padding: toRem(80) 0;
+  padding: toRem(80) 0 toRem(40) toRem(0);
+}
+
+//btn
+.btn {
+  display: inline-flex;
+  background-color: inherit;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: toRem(200);
+  max-height: toRem(44);
+  border-radius: toRem(50);
+  font-weight: 600;
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: $text-dark;
+  border: toRem(1) solid $border-dark;
+  padding: toRem(30) toRem(38);
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    background: $text-dark;
+    color: $text-light;
+    box-shadow: toRem(1) toRem(2) toRem(10) $text-dark;
+  }
 }

@@ -11,6 +11,9 @@
     background-color: rgb(64, 63, 61, 0.8);
     transition: 3s;
   }
+  &.path {
+    background-color: rgb(64, 63, 61, 0.8);
+  }
   &__container {
     max-width: toRem(1470);
     padding: toRem(0) toRem(15);
@@ -27,13 +30,19 @@
     line-height: 150%;
   }
   // .header__logo
-  &__logo img {
-    width: toRem(35);
-    height: toRem(40);
+  &__logo {
     position: relative;
     z-index: 15;
+    color: $text-accent;
+    font-size: toRem(18);
+    padding: toRem(5);
+    border-radius: toRem(5);
+    font-style: italic;
+    letter-spacing: toRem(3);
+    transition: all ease 0.3s;
     &:hover {
       cursor: pointer;
+      box-shadow: toRem(1) toRem(1) toRem(10) $border-light;
     }
   }
   // .header__menu
@@ -41,19 +50,12 @@
   }
   &__list {
     display: flex;
-    gap: calc(toRem(20) + (40 - 20) * ((100vw - toRem(768)) / (1440 - 768)));
     flex-wrap: wrap;
+    gap: calc(toRem(20) + (40 - 20) * ((100vw - toRem(768)) / (1440 - 768)));
     align-items: center;
-    font-size: toRem(18);
   }
   &__item {
     position: relative;
-
-    &:last-child {
-      margin-left: calc(
-        toRem(0) + (100 - 50) * ((100vw - toRem(380)) / (1440 - 380))
-      );
-    }
 
     @media (min-width: toRem(900)) {
       padding: toRem(10) 0px;
@@ -61,11 +63,12 @@
   }
   &__link {
     color: $text-light;
+    font-size: toRem(18);
     &:hover.stretch_line::after {
       width: 100%;
     }
   }
-  @media (max-width: toRem(900)) {
+  @media (max-width: toRem(992)) {
     // .header__menu
     &__menu {
       position: fixed;
@@ -145,10 +148,11 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  font-size: toRem(18);
   &__text {
     color: $text-light;
     text-align: center;
-    @media (max-width: toRem(900)) {
+    @media (max-width: toRem(992)) {
       color: $text-dark;
     }
     &:hover.stretch_line::after {
@@ -157,8 +161,13 @@
   }
   // .icon__img
   &__img img {
-    width: toRem(30);
-    height: toRem(30);
+    width: toRem(35);
+    height: toRem(35);
+    transition: all ease 0.3s;
+    transform: scale(1);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 //Burger Menu
@@ -166,7 +175,7 @@
   // .burger__menu
   &__menu {
     display: none;
-    @media (max-width: toRem(900)) {
+    @media (max-width: toRem(992)) {
       z-index: 10;
       display: block;
       position: relative;

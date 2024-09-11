@@ -11,7 +11,6 @@ export default function Accordion() {
   };
   return (
     <>
-      <h2 className="_title">Here your can find rules to learn</h2>
       <div className={styles.accordion__body}>
         {data.map((item, index) => {
           return (

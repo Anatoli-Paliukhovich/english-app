@@ -1,6 +1,7 @@
 import styles from "./hero.module.scss";
 import Video from "../../assets/video.mp4";
 import Button from "../UI/button/Button";
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <>
@@ -17,7 +18,9 @@ export default function Hero() {
                 their own."
                 <cite>— Johann Wolfgang von Goethe</cite>
               </blockquote>
-              <Button>Tests</Button>
+              <Link to="/test">
+                <Button>Tests</Button>
+              </Link>
             </div>
           </div>
           <video

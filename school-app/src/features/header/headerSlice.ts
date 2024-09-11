@@ -3,11 +3,20 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 type HeaderState = {
   isBurger: boolean;
   isScrolled: boolean;
+  links: Links[];
+  color: string;
 };
-
+type Links = { title: string; href: string };
 const initialState: HeaderState = {
   isBurger: false,
   isScrolled: false,
+  links: [
+    { title: "Grammar rules", href: "#rules" },
+    { title: "Olympiads", href: "#olympiads" },
+    { title: "Centralized examination", href: "#examination" },
+    { title: "Materials", href: "#materials" },
+  ],
+  color: "red",
 };
 const headerSlice = createSlice({
   name: "header",
@@ -19,8 +28,15 @@ const headerSlice = createSlice({
     setScrolled: (state, action: PayloadAction<boolean>) => {
       state.isScrolled = action.payload;
     },
+    setLinks: (state, action: PayloadAction<Links[]>) => {
+      state.links = action.payload;
+    },
+    setColor: (state, action: PayloadAction<string>) => {
+      state.color = action.payload;
+    },
   },
 });
 
 export default headerSlice.reducer;
-export const { setBurger, setScrolled } = headerSlice.actions;
+export const { setBurger, setScrolled, setLinks, setColor } =
+  headerSlice.actions;
