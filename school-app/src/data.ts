@@ -14,6 +14,21 @@ import DestinationB2 from "./assets/books/destinationb2.pdf";
 import English from "./assets/books/English.pdf";
 import Ess from "./assets/books/Essential.pdf";
 import Test from "./assets/books/SE.pdf";
+import Olymp1 from "./assets/olimpiads/olimp1.jpg";
+import Olymp2 from "./assets/olimpiads/olimp2.jpg";
+import Olymp3 from "./assets/olimpiads/olimp3.jpg";
+import Olymp4 from "./assets/olimpiads/olimp4.jpg";
+import Olymp5 from "./assets/olimpiads/olimp5.jpg";
+import Olymp6 from "./assets/olimpiads/olimp6.jpg";
+import Olymp7 from "./assets/olimpiads/olimpiads.png";
+import Form5 from "./assets/olimpiads/form5.docx";
+import Form6 from "./assets/olimpiads/form6.docx";
+import Form7 from "./assets/olimpiads/form7.docx";
+import Form8 from "./assets/olimpiads/form8.docx";
+import Form9 from "./assets/olimpiads/form9.docx";
+import Form10 from "./assets/olimpiads/form9.docx";
+import Form11 from "./assets/olimpiads/form9.docx";
+
 export const materialsData = [
   {
     id: 1,
@@ -63,6 +78,64 @@ export const materialsData = [
   //     src: Testing,
   //     href: Test,
   //   },
+];
+export const olympiadsData = [
+  {
+    id: 1,
+    title: "Form V",
+    author1: ``,
+    author2: ``,
+    src: Olymp1,
+    href: Form5,
+  },
+  {
+    id: 2,
+    title: "Form VI",
+    author1: ``,
+    author2: ``,
+    src: Olymp2,
+    href: Form6,
+  },
+  {
+    id: 3,
+    title: "Form VII",
+    author1: ``,
+    author2: ``,
+    src: Olymp3,
+    href: Form7,
+  },
+  {
+    id: 4,
+    title: "Form VIII",
+    author1: ``,
+    author2: ``,
+    src: Olymp4,
+    href: Form8,
+  },
+  {
+    id: 5,
+    title: "Form IX",
+    author1: ``,
+    author2: ``,
+    src: Olymp5,
+    href: Form9,
+  },
+  {
+    id: 6,
+    title: "Form X",
+    author1: ``,
+    author2: ``,
+    src: Olymp6,
+    href: Form9,
+  },
+  {
+    id: 7,
+    title: "Form XI",
+    author1: ``,
+    author2: ``,
+    src: Olymp7,
+    href: Form9,
+  },
 ];
 
 export const accordionData = [

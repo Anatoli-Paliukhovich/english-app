@@ -1,5 +1,5 @@
 import styles from "./sections.module.scss";
-import Collage from "../../assets/materials/col.jpg";
+import Material from "../../assets/sections/books.jpg";
 import { Link } from "react-router-dom";
 export default function RuleSection() {
   return (
@@ -23,7 +23,7 @@ export default function RuleSection() {
             </div>
             <div className={styles.section__image}>
               <img
-                src={Collage}
+                src={Material}
                 className={styles.section__image_hover}
                 alt="collage"
               />

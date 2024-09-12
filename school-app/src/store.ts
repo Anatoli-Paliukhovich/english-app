@@ -4,6 +4,7 @@ import AccordionReducer from "./features/accordion/accordionSlice";
 import TestsReducer from "./features/tests/testsSlice";
 import SearchReducer from "./features/search/searchSlice";
 import MaterialsReducer from "./features/material/materialSlice";
+import OlympiadsReducer from "./features/olympiad/olympiadSlice";
 export const store = configureStore({
   reducer: {
     header: HeaderReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
     tests: TestsReducer,
     search: SearchReducer,
     materials: MaterialsReducer,
+    olympiads: OlympiadsReducer,
   },
 });
 

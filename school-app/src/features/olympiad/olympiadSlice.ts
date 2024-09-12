@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { materialsData } from "../../data";
+import { olympiadsData } from "../../data";
 export type Material = {
   id: number;
   title: string;
@@ -10,17 +10,17 @@ export type Material = {
 };
 
 type MaterialState = {
-  materials: Material[]; // Ключ - название файла, значение - URL файла
+  olympiads: Material[];
   isLoading: boolean;
 };
 
 const initialState: MaterialState = {
-  materials: materialsData,
+  olympiads: olympiadsData,
   isLoading: false,
 };
 
-const materialSlice = createSlice({
-  name: "materials",
+const olympiadSlice = createSlice({
+  name: "olympiads",
   initialState,
   reducers: {
     setMaterials: (state, action: PayloadAction<Material[]>) => {
@@ -32,5 +32,5 @@ const materialSlice = createSlice({
   },
 });
 
-export const { setMaterials, setLoading } = materialSlice.actions;
-export default materialSlice.reducer;
+export const { setMaterials, setLoading } = olympiadSlice.actions;
+export default olympiadSlice.reducer;

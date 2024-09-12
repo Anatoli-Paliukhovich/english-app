@@ -1,5 +1,5 @@
 import styles from "./sections.module.scss";
-import Books from "../../assets/sections/books.jpg";
+import Grammar from "../../assets/sections/grammar.jpg";
 import { Link } from "react-router-dom";
 export default function RuleSection() {
   return (
@@ -13,7 +13,7 @@ export default function RuleSection() {
           <div className={styles.section__body}>
             <div className={styles.section__image}>
               <img
-                src={Books}
+                src={Grammar}
                 className={styles.section__image_hover}
                 alt="books"
               />

@@ -1,17 +1,21 @@
 import "../../scss/App.scss";
+import styles from "./home.module.scss";
 import Hero from "../../components/hero/Hero";
 import About from "./about/About";
 import RuleSection from "../../components/sections/RuleSection";
 import MaterialSection from "../../components/sections/MaterialSection";
-import { Link } from "react-router-dom";
+import Olimpiads from "../../components/sections/Olimpiads";
 
 export default function Home() {
   return (
-    <section className="main">
-      <Hero></Hero>
-      <About></About>
-      <RuleSection></RuleSection>
-      <MaterialSection></MaterialSection>
+    <section className={styles.main}>
+      <div className={styles.main__container}>
+        <Hero></Hero>
+        <About></About>
+        <RuleSection></RuleSection>
+        <MaterialSection></MaterialSection>
+        <Olimpiads></Olimpiads>
+      </div>
     </section>
   );
 }
