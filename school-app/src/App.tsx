@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <>
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route
           path="/test"
           element={
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         />
         <Route path="/olympiads" element={<Olimpiad />} />
         <Route path="/exam" element={<Exam />} />
-        <Route path="/rules/*" element={<Rules />} />
+        <Route path="/rules" element={<Rules />} />
       </Routes>
       <Footer></Footer>
     </>
