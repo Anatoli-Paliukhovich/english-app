@@ -24,7 +24,7 @@ const olympiadSlice = createSlice({
   initialState,
   reducers: {
     setMaterials: (state, action: PayloadAction<Material[]>) => {
-      state.materials = action.payload;
+      state.olympiads = action.payload;
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
