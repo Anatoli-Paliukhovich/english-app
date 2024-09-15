@@ -1,0 +1,8 @@
+@import "../../scss/variables.scss";
+
+.rules {
+  padding: toRem(100) toRem(0);
+  &__container {
+    @include container;
+  }
+}

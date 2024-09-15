@@ -1,0 +1,93 @@
+@import "../../../scss/variables.scss";
+
+.accordion__body {
+  max-width: toRem(800);
+  margin: 0px auto;
+}
+
+.accordion {
+  // .accordion__item
+  &__item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    &.active .accordion__qst {
+      background-color: $text-accent;
+      transition: all linear 0.4s;
+      color: $text-dark;
+      border: toRem(1) solid $text-dark;
+      cursor: auto;
+    }
+  }
+  // .accordion__qst
+  &__qst {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30);
+    align-items: center;
+    font-size: toRem(28);
+    color: $text-light;
+    background-color: $text-dark;
+    border-radius: toRem(20);
+    padding: toRem(15);
+    cursor: pointer;
+  }
+  // .accordion__control
+  &__control {
+    justify-self: flex-end;
+    position: relative;
+    padding: 0 toRem(10);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: toRem(25);
+      height: toRem(3);
+      background-color: $text-accent;
+      border-radius: toRem(5);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: toRem(25);
+      height: toRem(3);
+      background-color: $text-accent;
+      transform: rotate(90deg);
+      transition: all linear 0.3s;
+      border-radius: toRem(5);
+    }
+  }
+  &__item.active &__control::after {
+    transform: rotate(0deg);
+    transition: all linear 0.3;
+    background-color: $text-dark;
+  }
+  &__item.active &__control::before {
+    opacity: 0;
+  }
+  // .accordion__ans
+  &__ans {
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    &.open {
+      padding: toRem(15);
+      border-left: toRem(2) solid $text-accent;
+      overflow: visible;
+      opacity: 1;
+      height: 100%;
+      transition: opacity linear 1s;
+    }
+  }
+  // .accordion__ans-text
+  &__ans_text {
+  }
+}
+video {
+  width: 100%;
+  object-fit: cover;
+}
