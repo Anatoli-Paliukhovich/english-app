@@ -26,13 +26,16 @@ body {
 ._title {
   font-size: toRem(60);
   font-size: calc(
-    toRem(32) + (60 - 32) * ((100vw - toRem(380)) / (1440 - 380))
+    toRem(36) + (60 - 36) * ((100vw - toRem(380)) / (1440 - 380))
   );
   font-weight: 600;
   line-height: 125%;
   text-align: center;
   color: $text-dark;
   padding: 0 0 toRem(40) 0;
+}
+._left {
+  text-align: left;
 }
 ._title-decor {
   color: $text-accent;
@@ -78,3 +81,8 @@ body {
     box-shadow: toRem(1) toRem(2) toRem(10) $text-dark;
   }
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+

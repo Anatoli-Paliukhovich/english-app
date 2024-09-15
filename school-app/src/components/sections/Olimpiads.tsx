@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./sections.module.scss";
-import Olympiad from "../../assets/olimpiads/olimpiads.png";
+import Olympiad from "../../assets/olimpiads/olimpiadC.png";
+import { useRepeatAnimation } from "../../hooks";
 export default function Olimpiads() {
+  const [animItemRepeatRef, activeRepeat] = useRepeatAnimation();
   return (
     <section id="olympiads" className={styles.section}>
       <div className={styles.section__container}>
@@ -9,7 +11,12 @@ export default function Olimpiads() {
           English <span className="_title-decor">Olympiad</span> Challenges
         </h2>
         <div className={styles.section__body}>
-          <div className={styles.section__image}>
+          <div
+            ref={animItemRepeatRef}
+            className={`${styles.section__image} ${
+              activeRepeat ? styles.active : ""
+            }`}
+          >
             <img
               src={Olympiad}
               className={styles.section__image_hover}
@@ -17,7 +24,12 @@ export default function Olimpiads() {
             />
           </div>
           <div className={styles.section__content}>
-            <div className={`{styles.section__text} _text`}>
+            <div
+              ref={animItemRepeatRef}
+              className={`${styles.section__text} ${
+                activeRepeat ? styles.active : ""
+              }`}
+            >
               This page offers a selection of Olympiad-style exercises to help
               you practice and improve your English proficiency.
             </div>

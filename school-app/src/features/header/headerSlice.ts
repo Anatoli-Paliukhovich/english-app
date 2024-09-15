@@ -12,9 +12,9 @@ const initialState: HeaderState = {
   isScrolled: false,
   links: [
     { title: "Grammar rules", href: "#rules" },
+    { title: "Resources", href: "#materials" },
     { title: "Olympiads", href: "#olympiads" },
     { title: "Centralized examination", href: "#examination" },
-    { title: "Materials", href: "#materials" },
   ],
   color: "red",
 };

@@ -1,11 +1,18 @@
 import styles from "./header.module.scss";
 import Test from "../../assets/test.svg";
 import { Link } from "react-router-dom";
+import { MouseEventHandler } from "react";
 
-export default function GrammarTest() {
-
+type Props = {
+  onClick: MouseEventHandler;
+};
+export const GrammarTest: React.FC<Props> = ({ onClick }) => {
   return (
-    <Link to="/test" className={`${styles.icon} ${styles.header__item}`}>
+    <Link
+      to="/test"
+      className={`${styles.icon} ${styles.header__item}`}
+      onClick={onClick}
+    >
       <div className={`${styles.icon__text} ${styles.stretch_line}`}>
         Grammar tests
       </div>
@@ -14,4 +21,4 @@ export default function GrammarTest() {
       </div>
     </Link>
   );
-}
+};

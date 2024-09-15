@@ -3,7 +3,7 @@
 .section {
   // .section__container
   padding-top: calc(
-    toRem(20) + (80 - 20) * ((100vw - toRem(380)) / (1440 - 380))
+    toRem(70) + (80 - 70) * ((100vw - toRem(380)) / (1440 - 380))
   );
   padding-bottom: calc(
     toRem(60) + (80 - 60) * ((100vw - toRem(380)) / (1440 - 380))
@@ -25,15 +25,14 @@
     flex: 1 1 toRem(500);
     padding: 0px 0px 28% 0px;
     overflow: hidden;
-    border-radius: toRem(10);
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(102, 95, 85, 0.415);
+    border-radius: toRem(10) toRem(200) toRem(200);
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: scale(1);
+    }
+    &_right {
+      border-radius: toRem(200) toRem(10) toRem(200) toRem(200);
     }
     &_hover {
       transition: transform 0.3s ease;
@@ -63,5 +62,19 @@
   }
   // .section__text
   &__text {
+    color: $text-dark;
+    font-weight: 400;
+    line-height: 150%;
+    padding: toRem(0) 0 toRem(40) toRem(0);
+    max-width: toRem(500);
+    margin: 0px auto;
+    text-align: center;
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
 }

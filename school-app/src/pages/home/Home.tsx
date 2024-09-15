@@ -5,7 +5,7 @@ import About from "./about/About";
 import RuleSection from "../../components/sections/RuleSection";
 import MaterialSection from "../../components/sections/MaterialSection";
 import Olimpiads from "../../components/sections/Olimpiads";
-
+import Exam from "../../components/sections/Exam";
 export default function Home() {
   return (
     <section className={styles.main}>
@@ -15,6 +15,7 @@ export default function Home() {
         <RuleSection></RuleSection>
         <MaterialSection></MaterialSection>
         <Olimpiads></Olimpiads>
+        <Exam></Exam>
       </div>
     </section>
   );

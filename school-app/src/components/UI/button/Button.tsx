@@ -6,11 +6,11 @@ type ButtonProps = PropsWithChildren<{}>;
 export default function Button({ children }: ButtonProps) {
   return (
     <>
-      <a href="#" className={styles.btn}>
+      <button className={styles.btn}>
         {children}
         <span className={styles.btn__highlight}></span>
         <img src={Test} alt="tests" />
-      </a>
+      </button>
     </>
   );
 }

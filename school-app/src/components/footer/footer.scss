@@ -1,0 +1,125 @@
+@import "../../scss/variables.scss";
+.footer__body {
+  padding: toRem(100) toRem(40);
+  background: #665f55;
+  display: flex;
+  gap: toRem(40);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: toRem(40) toRem(40) toRem(0) toRem(0);
+  margin: toRem(60) toRem(0) toRem(0) toRem(0);
+}
+
+.footer__sip {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__sip-title {
+  text-align: left;
+  color: #e1d4c9;
+}
+
+.footer__icons-list {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__contacts {
+  flex: 1 1 auto;
+}
+
+.footer__contacts-title {
+  margin: 0px 0px 40px 0px;
+  color: #e1d4c9;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.footer__contacts-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+.logo__img {
+  transition: all ease 0.3s;
+}
+.logo__img:hover {
+  transform: scale(1.1);
+}
+.contacts-body-row {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.contacts-body-row a {
+  display: flex;
+  gap: 8px;
+}
+
+.contacts-body-row:last-child {
+  cursor: default;
+}
+
+.stretch {
+  position: relative;
+}
+
+.stretch::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #e1d4c9;
+  transition: all linear 0.5s;
+}
+
+.contacts-body-icon {
+  color: rgba(225, 212, 201, 1);
+}
+
+.contacts-body-text {
+  color: #e1d4c9;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@media (max-width: 962px) {
+  .footer__body {
+    flex-direction: column;
+    padding: 100px 100px;
+    align-items: start;
+  }
+  .logo__img {
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+  }
+}
+
+.footer__icons-item:hover svg path {
+  transition: stroke 0.8s ease-in-out;
+}
+
+.footer__icons-link:hover svg rect {
+  transition: fill 1s ease-in-out;
+  fill: #e1d4c9;
+  stroke: #e1d4c9;
+  transition: all 0.8s ease-in-out;
+}
+
+.footer__icons-link:hover svg path {
+  stroke: rgba(64, 63, 61, 1);
+}
+
+.contacts-body-row a:hover.stretch::after {
+  width: 100%;
+}

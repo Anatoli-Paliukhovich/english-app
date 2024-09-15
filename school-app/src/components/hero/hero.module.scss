@@ -46,12 +46,28 @@
     line-height: 105%;
     color: #e1d4c9;
     max-width: toRem(630);
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
+
   // .hero__text
   &__text {
     color: #e1d4c9;
     line-height: 150%;
     max-width: toRem(586);
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.5s;
+    }
   }
   &__preudo {
   }

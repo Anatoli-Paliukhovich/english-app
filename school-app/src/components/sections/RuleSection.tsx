@@ -1,7 +1,10 @@
 import styles from "./sections.module.scss";
 import Grammar from "../../assets/sections/grammar.jpg";
 import { Link } from "react-router-dom";
+import { useRepeatAnimation } from "../../hooks";
+
 export default function RuleSection() {
+  const [animItemRepeatRef, activeRepeat] = useRepeatAnimation();
   return (
     <>
       <section id="rules" className={styles.section}>
@@ -11,7 +14,12 @@ export default function RuleSection() {
             <span className="_title-decor">Rules</span>
           </h2>
           <div className={styles.section__body}>
-            <div className={styles.section__image}>
+            <div
+              ref={animItemRepeatRef}
+              className={`${styles.section__image} ${
+                activeRepeat ? styles.active : ""
+              }`}
+            >
               <img
                 src={Grammar}
                 className={styles.section__image_hover}
@@ -19,7 +27,12 @@ export default function RuleSection() {
               />
             </div>
             <div className={styles.section__content}>
-              <div className={`{styles.section__text} _text`}>
+              <div
+                ref={animItemRepeatRef}
+                className={`${styles.section__text} ${
+                  activeRepeat ? styles.active : ""
+                }`}
+              >
                 Our page provides clear and understandable grammar rules,
                 helping you improve your language proficiency. Learn and apply
                 the rules with ease thanks to our user-friendly guide.

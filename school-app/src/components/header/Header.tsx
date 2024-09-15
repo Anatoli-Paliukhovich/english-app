@@ -1,7 +1,7 @@
 import styles from "./header.module.scss";
 import { useEffect } from "react";
-import GrammarTest from "./GrammarTest";
-import BackToHome from "./BackToHome";
+import { GrammarTest } from "./GrammarTest";
+import { BackToHome } from "./BackToHome";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { setBurger, setScrolled } from "../../features/header/headerSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -39,10 +39,17 @@ export default function Header() {
       >
         <div className={styles.header__container}>
           <div className={styles.header__body}>
-            <Link to="/" className={styles.header__logo}>
+            <Link
+              to="/"
+              className={styles.header__logo}
+              onClick={() => dispatch(setBurger(false))}
+            >
               <div>EnglishEase</div>
             </Link>
             <nav
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               className={
                 isBurger
                   ? `${styles.header__menu} ${styles._active}`
@@ -55,7 +62,10 @@ export default function Header() {
                     return (
                       <li key={link.title} className={styles.header__item}>
                         <a
-                          onClick={() => navigate("/", { replace: true })}
+                          onClick={() => {
+                            navigate("/", { replace: true });
+                            dispatch(setBurger(false));
+                          }}
                           href={link.href.toLowerCase()}
                           className={`${styles.header__link} ${styles.stretch_line}`}
                         >
@@ -65,21 +75,29 @@ export default function Header() {
                     );
                   })}
                 {location.pathname !== "/test" && isBurger ? (
-                  <GrammarTest></GrammarTest>
+                  <GrammarTest
+                    onClick={() => dispatch(setBurger(false))}
+                  ></GrammarTest>
                 ) : (
                   ""
                 )}
                 {location.pathname !== "/" && isBurger ? (
-                  <BackToHome></BackToHome>
+                  <BackToHome
+                    onClick={() => dispatch(setBurger(false))}
+                  ></BackToHome>
                 ) : (
                   ""
                 )}
               </ul>
             </nav>
             {location.pathname !== "/test" ? (
-              <GrammarTest></GrammarTest>
+              <GrammarTest
+                onClick={() => dispatch(setBurger(false))}
+              ></GrammarTest>
             ) : (
-              <BackToHome></BackToHome>
+              <BackToHome
+                onClick={() => dispatch(setBurger(false))}
+              ></BackToHome>
             )}
             <div
               onClick={() => dispatch(setBurger(!isBurger))}

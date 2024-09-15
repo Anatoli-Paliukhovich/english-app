@@ -2,22 +2,36 @@ import styles from "./hero.module.scss";
 import Video from "../../assets/video.mp4";
 import Button from "../UI/button/Button";
 import { Link } from "react-router-dom";
-export default function Hero() {
+import { useAnimation, useRepeatAnimation } from "../../hooks";
+
+const Hero = () => {
+  const [animItemRef, active] = useAnimation();
+  const [animItemRepeatRef, activeRepeat] = useRepeatAnimation();
   return (
     <>
       <section className={`${styles.main__hero}`}>
         <div className={styles.hero__box}>
           <div className={styles.hero__body}>
             <div className={styles.hero__content}>
-              <h1 className={styles.hero__title}>
+              <h1
+                ref={animItemRef}
+                className={`${styles.hero__title} ${
+                  active ? styles.active : ""
+                }`}
+              >
                 <span className={styles.title_dec}>Learn</span> English with
                 ease and confidence!
               </h1>
-              <blockquote className={styles.hero__text}>
+              <div
+                ref={animItemRepeatRef}
+                className={`${styles.hero__text} ${
+                  activeRepeat ? styles.active : ""
+                }`}
+              >
                 "Those who know nothing of foreign languages know nothing of
                 their own."
                 <cite>— Johann Wolfgang von Goethe</cite>
-              </blockquote>
+              </div>
               <Link to="/test">
                 <Button>Tests</Button>
               </Link>
@@ -36,4 +50,6 @@ export default function Hero() {
       </section>
     </>
   );
-}
+};
+
+export default Hero;

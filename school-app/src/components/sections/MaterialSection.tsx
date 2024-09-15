@@ -1,7 +1,9 @@
 import styles from "./sections.module.scss";
 import Material from "../../assets/sections/books.jpg";
 import { Link } from "react-router-dom";
-export default function RuleSection() {
+import { useRepeatAnimation } from "../../hooks";
+export default function MaterialSection() {
+  const [animItemRepeatRef, activeRepeat] = useRepeatAnimation();
   return (
     <>
       <section id="materials" className={styles.section}>
@@ -12,7 +14,12 @@ export default function RuleSection() {
           </h2>
           <div className={styles.section__body}>
             <div className={styles.section__content}>
-              <div className={`{styles.section__text} _text`}>
+              <div
+                ref={animItemRepeatRef}
+                className={`${styles.section__text} ${
+                  activeRepeat ? styles.active : ""
+                }`}
+              >
                 Access a wide range of educational materials and resources
                 designed to enhance your understanding and expertise. Explore
                 topics that matter to you.
@@ -21,7 +28,12 @@ export default function RuleSection() {
                 Go to the page
               </Link>
             </div>
-            <div className={styles.section__image}>
+            <div
+              ref={animItemRepeatRef}
+              className={`${styles.section__image} ${
+                styles.section__image_right
+              } ${activeRepeat ? styles.active : ""}`}
+            >
               <img
                 src={Material}
                 className={styles.section__image_hover}
