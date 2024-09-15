@@ -1,0 +1,60 @@
+@import "../../../scss/variables.scss";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  max-width: toRem(200);
+  border-radius: toRem(50);
+  background: $text-light;
+  font-weight: 600;
+  line-height: 150%;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: $text-dark;
+  padding: toRem(15) toRem(78);
+  position: relative;
+  overflow-x: hidden;
+  font-size: toRem(18);
+  & img {
+    display: block;
+    width: toRem(38);
+    height: toRem(30);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    padding: 0 toRem(8) 0 0;
+  }
+  &__highlight {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: toRem(75);
+    transform: skewX(-55deg);
+    animation: highlightAnimation 3s infinite linear;
+    left: -150%;
+    background: linear-gradient(
+      90deg,
+      rgba(225, 212, 201, 0.1),
+      rgba(255, 255, 255, 0.4)
+    );
+  }
+  @keyframes highlightAnimation {
+    0% {
+      left: -150%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+  &:hover {
+    background: $text-dark;
+    color: $text-light;
+    box-shadow: toRem(1) toRem(2) toRem(10) $text-light;
+    & img {
+      opacity: 1;
+      visibility: visible;
+      padding: 0 0 0 toRem(8);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../scss/variables.scss";
+
+.btn {
+  display: inline-flex;
+  align-self: flex-end;
+  background-color: inherit;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: toRem(200);
+  max-height: toRem(44);
+  border-radius: toRem(50);
+  font-weight: 600;
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: $text-dark;
+  border: toRem(1) solid $border-dark;
+  padding: toRem(15) toRem(38);
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    background: $text-dark;
+    color: $text-light;
+    box-shadow: toRem(1) toRem(2) toRem(10) $text-dark;
+  }
+  &_dsl {
+    @extend .btn;
+    color: rgba(64, 63, 61, 0.498);
+    &:hover {
+      background: inherit;
+      color: rgba(64, 63, 61, 0.498);
+      box-shadow: none;
+    }
+  }
+}

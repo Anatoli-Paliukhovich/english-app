@@ -1,0 +1,116 @@
+@import "../../scss/variables.scss";
+
+.main {
+  // .main__hero
+  &__hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.hero {
+  // .hero__container
+  &__box {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  // .hero__body
+  &__body {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex: 1 1 auto;
+  }
+  &__content {
+    width: toRem(1470);
+    padding: toRem(80) toRem(15) toRem(0);
+    padding-top: calc(
+      toRem(40) + (80 - 40) * ((100vw - toRem(380)) / (1440 - 380))
+    );
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: toRem(30);
+  }
+  // .hero__title
+  &__title {
+    font-size: calc(
+      toRem(42) + (72 - 42) * ((100vw - toRem(380)) / (1440 - 380))
+    );
+    font-weight: 600;
+    line-height: 105%;
+    color: #e1d4c9;
+    max-width: toRem(630);
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  // .hero__text
+  &__text {
+    color: #e1d4c9;
+    line-height: 150%;
+    max-width: toRem(586);
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.5s;
+    }
+  }
+  &__preudo {
+  }
+  // .hero__button
+  &__button {
+    display: inline-flex;
+    max-width: 200px;
+    border-radius: 100px;
+    background: #e1d4c9;
+    text-align: center;
+    font-weight: 600;
+    line-height: 150%;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  // .hero__btn
+  &__btn {
+    display: flex;
+    color: #403f3d;
+    padding: 20px 78px 20px 78px;
+    transition: 0.5s;
+  }
+  // .hero__btn-img
+  &__btn_img {
+    display: block;
+    opacity: 0;
+    padding: 0px 0px 0px 8px;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  // .hero__video
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.title_dec {
+  color: #b0907a;
+  font-style: italic;
+}
+.btn {
+}
