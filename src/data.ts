@@ -12,6 +12,7 @@ import DestinationB1 from "./assets/books/DestinationB1.pdf";
 import DestinationB2 from "./assets/books/destinationb2.pdf";
 import English from "./assets/books/English.pdf";
 import Ess from "./assets/books/Essential.pdf";
+import Way from "./assets/books/way.pdf";
 import Olymp1 from "./assets/olimpiads/olimp1.jpg";
 import Olymp2 from "./assets/olimpiads/olimp2.jpg";
 import Olymp3 from "./assets/olimpiads/olimp3.jpg";
@@ -19,6 +20,11 @@ import Olymp4 from "./assets/olimpiads/olimp4.jpg";
 import Olymp5 from "./assets/olimpiads/olimp5.jpg";
 import Olymp6 from "./assets/olimpiads/olimp6.jpg";
 import Olymp7 from "./assets/olimpiads/olimpiads.png";
+import Form5 from "./assets/olimpiads/form5.pdf";
+import Form6 from "./assets/olimpiads/form6.pdf";
+import Form7 from "./assets/olimpiads/form7.pdf";
+import Form8 from "./assets/olimpiads/form8.pdf";
+import Form9 from "./assets/olimpiads/form9.pdf";
 
 export const materialsData = [
   {
@@ -59,7 +65,7 @@ export const materialsData = [
     author1: `E. Karnevskaya`,
     author2: `Z. Kurochkina`,
     src: OnTheWay,
-    href: DestinationB1,
+    href: Way,
   },
   //   {
   //     id: 6,
@@ -77,7 +83,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp1,
-    href: "",
+    href: Form5,
   },
   {
     id: 2,
@@ -85,7 +91,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp2,
-    href: "",
+    href: Form6,
   },
   {
     id: 3,
@@ -93,7 +99,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp3,
-    href: "",
+    href: Form7,
   },
   {
     id: 4,
@@ -101,7 +107,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp4,
-    href: "",
+    href: Form8,
   },
   {
     id: 5,
@@ -109,7 +115,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp5,
-    href: "",
+    href: Form9,
   },
   {
     id: 6,
@@ -117,7 +123,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp6,
-    href: "",
+    href: Form9,
   },
   {
     id: 7,
@@ -125,7 +131,7 @@ export const olympiadsData = [
     author1: ``,
     author2: ``,
     src: Olymp7,
-    href: "",
+    href: Form9,
   },
 ];
 
