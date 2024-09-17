@@ -141,21 +141,42 @@ export const accordionData = [
     url: Logo1,
     title: "Present Simple",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat facilis tempora beatae aliquam adipisci laborum, perspiciatis error magni veritatis autem animi provident officiis culpaconsequuntur ut vitae, harum iure.",
+      "•	обозначает регулярные действия, привычки, факты, расписание (every day/week/month, always, often, sometimes, rarely, hardly ever, never)",
+    paragraf1: "I / you / we / they + V ///he / she / it + Vs",
+    paragraf2:
+      "+ I drink coffee every day. (Я пью кофе каждый день) – регулярно повторяющееся действие.!!! в 3л.ед.числе (he, she, it) к глаголу прибавляем окончание –s/-es.He drinks coffee every day.!!!",
+    paragraf3:
+      "- do not (don’t)/ does not (doesn’t)        do(I, you, we, they) / does (he, she, it) I don’t drink coffee every day. (Я не пью кофе каждый день.)She doesn’t drink coffee every day. (Она не пьёт кофе каждый день.)",
+    paragraf4:
+      "? Does she drink coffee every day? (Она пьёт кофе каждый день?) – Вспомогательный глагол do/does ставится перед подлежащим.",
+    paragraf5: "",
   },
   {
     id: 2,
     url: Logo1,
     title: "Present Continuous",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat facilis tempora beatae aliquam adipisci laborum, perspiciatis error magni veritatis autem animi provident officiis culpaconsequuntur ut vitae, harum iure.",
+    description: `•	действие, которое происходит сейчас (now – сейчас, at the moment – в данный момент). Образуется с помощью вспомогательного глагола to be (am, is, are) и основного глагола c окончанием –ing.`,
+    paragraf1: "To be (am(I), is(he,she,it), are(you,we,they)) + V-ing",
+    paragraf2: "+ I am drinking coffee now. (Я пью кофе сейчас.)",
+    paragraf3:
+      "- He is not (isn’t) drinking coffee now. (Он не пьёт кофе сейчас.) – К глаголу to be (am, is, are) прибавляется частица not.",
+    paragraf4: ` Are you drinking coffee now? (Ты пьёшь кофе сейчас?) – Глагол to be (am, is, are) ставится перед подлежащим.`,
+    paragraf5: "",
   },
   {
     id: 3,
     url: Logo1,
     title: "Present Perfect",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat facilis tempora beatae aliquam adipisci laborum, perspiciatis error magni veritatis autem animi provident officiis culpaconsequuntur ut vitae, harum iure.",
+      "•	обозначает действие, произошедшее в прошлом, но важное в настоящем (already – уже, just – только что, ever – когда-либо, yet – ужеещё, never – никогда, recently – недавно).",
+    paragraf1: "have\\has + V3\\(-ed)",
+    paragraf2:
+      "+ I have already seen this photo. (Я уже видел эту фотографию.)",
+    paragraf3:
+      "-  have + not=haven’t  has + not=hasn’t + V3 I haven’t seen this photo yet. ( Я еще не видел эту фотографию.), Have you ever seen this photo? (Ты когда-либо видел эту фотографию?)",
+    paragraf4:
+      " Have\\Has ставится перед подлежащим Have you ever seen this photo? ( Ты когда-либо видел эту фотографию?)",
+    paragraf5: "",
   },
   {
     id: 4,
@@ -163,6 +184,11 @@ export const accordionData = [
     title: "Past Simple",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat facilis tempora beatae aliquam adipisci laborum, perspiciatis error magni veritatis autem animi provident officiis culpaconsequuntur ut vitae, harum iure.",
+    paragraf1: "",
+    paragraf2: "",
+    paragraf3: "",
+    paragraf4: "",
+    paragraf5: "",
   },
 ];
 

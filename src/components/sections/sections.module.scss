@@ -28,6 +28,9 @@
     border-radius: toRem(10) toRem(200) toRem(200);
     transform: scale(0);
     transition: all 0.8s ease 0s;
+    @media (max-width: toRem(992)) {
+      transform: scale(1);
+    }
     &.active {
       transform: scale(1);
     }
@@ -72,6 +75,10 @@
     transform: translate(0, 120%);
     opacity: 0;
     transition: all 0.8s ease 0.3s;
+    @media (max-width: toRem(992)) {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
     &.active {
       transform: translate(0, 0);
       opacity: 1;
