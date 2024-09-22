@@ -20,9 +20,7 @@ export default function Materials() {
           </h2>
           <div className={styles.materials__row}>
             {materials.map((item) => {
-              return (
-                <MaterialCard key={item.id} {...item}></MaterialCard>
-              );
+              return <MaterialCard key={item.id} {...item}></MaterialCard>;
             })}
           </div>
         </div>
