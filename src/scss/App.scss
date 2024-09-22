@@ -51,6 +51,16 @@ body {
   margin: 0px auto;
   text-align: center;
 }
+._subtitle {
+  font-size: calc(
+    toRem(24) + (32 - 24) * ((100vw - toRem(380)) / (1440 - 380))
+  );
+  text-align: center;
+  color: $border-dark;
+  font-weight: 600;
+  letter-spacing: toRem(1);
+  padding: 0px 0px toRem(50) 0px;
+}
 //home
 .about {
   padding: toRem(80) 0 toRem(40) toRem(0);
@@ -85,4 +95,3 @@ body {
   display: flex;
   flex-direction: column;
 }
-

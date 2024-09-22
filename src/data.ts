@@ -26,6 +26,7 @@ import Form7 from "./assets/olimpiads/form7.pdf";
 import Form8 from "./assets/olimpiads/form8.pdf";
 import Form9 from "./assets/olimpiads/form9.pdf";
 
+
 export const materialsData = [
   {
     id: 1,
@@ -155,12 +156,12 @@ export const accordionData = [
     id: 2,
     url: Logo1,
     title: "Present Continuous",
-    description: `•	действие, которое происходит сейчас (now – сейчас, at the moment – в данный момент). Образуется с помощью вспомогательного глагола to be (am, is, are) и основного глагола c окончанием –ing.`,
-    paragraf1: "To be (am(I), is(he,she,it), are(you,we,they)) + V-ing",
+    description: `•	действие, которое происходит сейчас; запланированное действие в будущем (now – сейчас, at the moment – в данный момент). Образуется с помощью вспомогательного глагола to be (am, is, are) и основного глагола c окончанием –ing.`,
+    paragraf1: "To be(am, is, are) + Ving",
     paragraf2: "+ I am drinking coffee now. (Я пью кофе сейчас.)",
     paragraf3:
       "- He is not (isn’t) drinking coffee now. (Он не пьёт кофе сейчас.) – К глаголу to be (am, is, are) прибавляется частица not.",
-    paragraf4: ` Are you drinking coffee now? (Ты пьёшь кофе сейчас?) – Глагол to be (am, is, are) ставится перед подлежащим.`,
+    paragraf4: `? Are you drinking coffee now? (Ты пьёшь кофе сейчас?) – Глагол to be (am, is, are) ставится перед подлежащим.`,
     paragraf5: "",
   },
   {
@@ -168,27 +169,149 @@ export const accordionData = [
     url: Logo1,
     title: "Present Perfect",
     description:
-      "•	обозначает действие, произошедшее в прошлом, но важное в настоящем (already – уже, just – только что, ever – когда-либо, yet – ужеещё, never – никогда, recently – недавно).",
-    paragraf1: "have\\has + V3\\(-ed)",
+      "•	обозначает действие, произошедшее в прошлом, но важное в настоящем (важен результат в настоящем) (already – уже, just – только что, ever – когда-либо, yet – уже\\ещё, never – никогда, recently – недавно).",
+    paragraf1: "have/has + V3/(-ed)",
     paragraf2:
       "+ I have already seen this photo. (Я уже видел эту фотографию.)",
     paragraf3:
-      "-  have + not=haven’t  has + not=hasn’t + V3 I haven’t seen this photo yet. ( Я еще не видел эту фотографию.), Have you ever seen this photo? (Ты когда-либо видел эту фотографию?)",
+      "-  have + not=haven’t  has + not=hasn’t + V3 I haven’t seen this photo yet. ( Я еще не видел эту фотографию.)",
     paragraf4:
-      " Have\\Has ставится перед подлежащим Have you ever seen this photo? ( Ты когда-либо видел эту фотографию?)",
+      "? Have\\Has ставится перед подлежащим Have you ever seen this photo? ( Ты когда-либо видел эту фотографию?)",
     paragraf5: "",
   },
   {
     id: 4,
     url: Logo1,
+    title: "Present Perfect Continuous",
+    description:
+      "• обозначает действие, которое началось в прошлом и длится до сих пор (since – с , for – на протяжении, all day - весь день, for years – на протяжении лет, recently - недавно)",
+    paragraf1: " have/has + been + Ving",
+    paragraf2: "+ I have been walking in the park for an hour.",
+    paragraf3: "- I haven't been walking in the park for an hour.",
+    paragraf4: "? Have you been walking in the park for an hour?",
+    paragraf5: "",
+  },
+  {
+    id: 5,
+    url: Logo1,
     title: "Past Simple",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat facilis tempora beatae aliquam adipisci laborum, perspiciatis error magni veritatis autem animi provident officiis culpaconsequuntur ut vitae, harum iure.",
-    paragraf1: "",
-    paragraf2: "",
-    paragraf3: "",
-    paragraf4: "",
+      "•	действие, которое произошло в прошлом (yesterday - вчера, last week – на прошлой неделе, 2 days ago – два дня назад)",
+    paragraf1: "V2/ed",
+    paragraf2:
+      "+ I played football yesterday.(Я играл в футбол вчера). I drank coffee last week.(Я пил кофе на прошлой неделе)",
+    paragraf3:
+      "- did + not=didn’t / I didn’t play football yesterday. I didn’t drink coffee last week.",
+    paragraf4:
+      "? Did ставится перед подлежащим. Did you play football yesterday?",
     paragraf5: "",
+  },
+  {
+    id: 6,
+    url: Logo1,
+    title: "Past Continuous",
+    description:
+      "•	действия, которые происходили (длились) в какой-то момент или период в прошлом (from … to …, at that time)",
+    paragraf1: "was/were + Ving",
+    paragraf2: "+ I was walking in the park from 4 to 5 pm yesterday.",
+    paragraf3:
+      "- wasn't/weren't + Ving / I wasn't walking the dog at that time yesterday",
+    paragraf4: "? Were you doing your homework from 6 to 7 pm last Monday?",
+    paragraf5: "",
+  },
+  {
+    id: 7,
+    url: Logo1,
+    title: "Future Simple",
+    description:
+      "•	действие, которое произойдёт в будущем. (tomorrow - завтра , next week – на следующей неделе , next year – в следующем году )",
+    paragraf1: "will + V1",
+    paragraf2:
+      "+ I will play football tomorrow. (Завтра я буду играть в футбол.)",
+    paragraf3:
+      "- will + not = won’t / I will not play football tomorrow. ( Завтра я не буду играть в футбол.)",
+    paragraf4:
+      "? Will ставится перед подлежащим./ Will you play football tomorrow? (Ты будешь играть в футбол завтра?)",
+    paragraf5: "",
+  },
+  {
+    id: 8,
+    url: Logo1,
+    title: "Future Continuous",
+    description:
+      "•	действия, которые будут происходить в какой-то момент или период в будущем (tomorrow, next, in 5 minutes)",
+    paragraf1: "will + be + Ving",
+    paragraf2: "+ I will be walking in the park tomorrow morning.",
+    paragraf3: "- will not = won't + be + Ving",
+    paragraf4: "? Will you be walking in the park tomorrow morning?",
+    paragraf5: "",
+  },
+  {
+    id: 9,
+    url: Logo1,
+    title: "Past Perfect",
+    description:
+      "•	действие, которое завершилось к определенному моменту в прошлом (by 6 o’clock, by the time,  yet, just, already, before)",
+    paragraf1: "had + V3/ed",
+    paragraf2:
+      "+ By six o’clock Kate had taken down the decorations. Kate had taken down the decorations by the time granny called",
+    paragraf3: "- had + not = hadn’t + V3",
+    paragraf4: "? Had she taken down the decorations by six o’clock?",
+    paragraf5: "",
+  },
+  {
+    id: 10,
+    url: Logo1,
+    title: "Past Perfect Continuous",
+    description:
+      "•	действия, которые продолжались до какого-то момента или действия в прошлом(since, for, all day, for years)",
+    paragraf1: "had + been + Ving",
+    paragraf2:
+      "+ I was tired because I had been walking in the park very long.",
+    paragraf3:
+      "- had + not = hadn’t + been + Ving / I wasn't tired because I hadn't been walking in the park very long.",
+    paragraf4: "? Had ____ been + Ving? (Had ставится перед подлежащим)",
+    paragraf5: "",
+  },
+  {
+    id: 11,
+    url: Logo1,
+    title: "Future Perfect",
+    description:
+      "•	действия, которые произойдут до какого-то момента в будущем (by, tomorrow, next)",
+    paragraf1: "will + have + V3/ed",
+    paragraf2: "+ I will have walked in the park by 5 pm tomorrow.",
+    paragraf3: "- will + not = won't + have + V3/ed",
+    paragraf4: "? Will ____ have + V3/ed? (Will ставится перед подлежащим)",
+    paragraf5: "",
+  },
+  {
+    id: 12,
+    url: Logo1,
+    title: "Future Perfect Continuous",
+    description:
+      "•	действия, которые будут продолжаться до какого-то момента в будущем (by, момент в будущем (on Saturday, at 3 o’clock), tomorrow, next)",
+    paragraf1: "will + have + been + Ving",
+    paragraf2: "+ At 7 pm I will have been walking in the park for 3 hours.",
+    paragraf3: "- will + not = won't + have + been + Ving",
+    paragraf4:
+      "? Will ____ have + been + Ving? (Will ставится перед подлежащим)",
+    paragraf5: "",
+  },
+  {
+    id: 13,
+    url: Logo1,
+    title: "Few / a few / little / a little",
+    description:
+      "Few • Означает небольшое количество; • Используется для исчисляемых существительных; • Пример: Few people attended the party.",
+    paragraf1: "",
+    paragraf2: `A few • Означает \"несколько\" или \"небольшое количество\" • Также используется для исчисляемых существительных \n • Пример: I have a few apples.`,
+    paragraf3:
+      'Little • Означает "мало" или "очень маленькое количество"; • Используется для неисчисляемых существительных; • Пример: He has little patience.',
+    paragraf4:
+      'A little • Означает "немного" или "некоторое количество"; • Также используется для неисчисляемых существительных; • Пример: I would like a little coffee.',
+    paragraf5:
+      'Ключевая разница в том, что "few/a few" применяется к исчисляемым существительным, а "little/a little" к неисчисляемым. Также "few/little" подразумевает меньшее количество, чем "a few/a little".',
   },
 ];
 
