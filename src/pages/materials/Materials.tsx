@@ -21,7 +21,7 @@ export default function Materials() {
           <div className={styles.materials__row}>
             {materials.map((item) => {
               return (
-                <MaterialCard key={item.id} material={item}></MaterialCard>
+                <MaterialCard key={item.id} {...item}></MaterialCard>
               );
             })}
           </div>
