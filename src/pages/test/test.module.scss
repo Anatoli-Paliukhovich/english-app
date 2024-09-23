@@ -1,8 +1,16 @@
 @import "../../scss/variables.scss";
 
 .test__page {
-  padding: toRem(100) toRem(0);
+  flex: 1 1 auto;
+  min-height: 100vh;
+  padding: toRem(100) toRem(0) toRem(0) toRem(0);
 }
 .test__container {
   @include container;
+}
+._rightPadding {
+  padding: toRem(100) toRem(17) 0px 0px;
+  @media (max-width: toRem(992)) {
+    padding: toRem(100) 0px 0px 0px;
+  }
 }

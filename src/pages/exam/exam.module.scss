@@ -35,7 +35,8 @@
 .test__item_video {
   margin: 0px auto;
   position: relative;
-  max-width: 580px;
+  min-height: toRem(250);
+  max-width: toRem(580);
   padding: 0px 0px 26.5% 0px;
 }
 .test__item_video iframe {
@@ -49,6 +50,7 @@
 }
 .spec__iframe {
   position: relative;
+  min-height: toRem(250);
   width: toRem(380);
   padding: 0px 0px 35% 0px;
 }

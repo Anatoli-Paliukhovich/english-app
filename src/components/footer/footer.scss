@@ -95,7 +95,7 @@
 @media (max-width: 962px) {
   .footer__body {
     flex-direction: column;
-    padding: 100px 100px;
+    padding: toRem(60) toRem(40);
     align-items: start;
   }
   .logo__img {

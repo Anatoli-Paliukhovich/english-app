@@ -29,16 +29,20 @@ export default function Accordion() {
     <>
       <div className={styles.accordion__body}>
         <Search ref={inputRef}></Search>
-        {filteredData.map((item, index) => {
-          return (
-            <AccordionItem
-              onToggle={() => handleToggle(index.toString())}
-              key={item.id}
-              active={isChosen === index.toString()}
-              {...item}
-            ></AccordionItem>
-          );
-        })}
+        {filteredData.length > 0 ? (
+          filteredData.map((item, index) => {
+            return (
+              <AccordionItem
+                onToggle={() => handleToggle(index.toString())}
+                key={item.id}
+                active={isChosen === index.toString()}
+                {...item}
+              ></AccordionItem>
+            );
+          })
+        ) : (
+          <h4 className="no_found">Oops, nothing was found :(</h4>
+        )}
       </div>
     </>
   );
