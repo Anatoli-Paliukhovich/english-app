@@ -3,7 +3,7 @@
 .test__page {
   flex: 1 1 auto;
   min-height: 100vh;
-  padding: toRem(100) toRem(0) toRem(0) toRem(0);
+  padding: toRem(100) toRem(0) toRem(60) toRem(0);
 }
 .test__container {
   @include container;

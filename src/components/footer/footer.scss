@@ -1,7 +1,14 @@
 @import "../../scss/variables.scss";
-.footer__body {
-  padding: toRem(100) toRem(40);
+.footer {
   background: #665f55;
+  margin: toRem(40) 0px 0px 0px;
+}
+.footer__container {
+  @include container;
+}
+.footer__body {
+  padding: toRem(40) toRem(40);
+
   display: flex;
   gap: toRem(40);
   justify-content: space-between;

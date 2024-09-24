@@ -28,9 +28,11 @@ const Hero = () => {
                   activeRepeat ? styles.active : ""
                 }`}
               >
-                "Those who know nothing of foreign languages know nothing of
-                their own."
-                <cite>— Johann Wolfgang von Goethe</cite>
+                Those who know nothing of foreign languages <br /> know nothing
+                of their own.
+                <p style={{ paddingTop: "5px" }}>
+                  <cite>Johann Wolfgang von Goethe</cite>
+                </p>
               </div>
               <Link to="/test">
                 <Button>Tests</Button>
