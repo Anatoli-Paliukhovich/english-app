@@ -1,0 +1,22 @@
+/* ToRem */
+/* Container */
+.test__page {
+  flex: 1 1 auto;
+  min-height: 100vh;
+  padding: 6.25rem 0rem 3.75rem 0rem;
+}
+
+.test__container {
+  max-width: 91.875rem;
+  padding: 0rem 0.9375rem;
+  margin: 0 auto;
+}
+
+._rightPadding {
+  padding: 6.25rem 1.0625rem 0px 0px;
+}
+@media (max-width: 62rem) {
+  ._rightPadding {
+    padding: 6.25rem 0px 0px 0px;
+  }
+}

@@ -1,6 +1,9 @@
 import styles from "./tests.module.scss";
 import { useAppSelector, useAppDispatch } from "../../hooks";
+import { useState } from "react";
 import Search from "../UI/search/Search";
+import type { CardState } from "../../features/tests/testsSlice";
+import Skeleton from "../skeleton/Skeleton";
 import {
   setIsOpen,
   setCurrentTest,
@@ -8,24 +11,36 @@ import {
   setLock,
   setResult,
   setScore,
+  setIsLoading,
 } from "../../features/tests/testsSlice";
 import PopupTest from "../UI/popup/PopupTest";
 import { useEffect, useRef } from "react";
 
 export default function Tests() {
-  const { isOpen, testData } = useAppSelector((state) => state.tests);
+  const { isOpen, testData, isLoading } = useAppSelector(
+    (state) => state.tests
+  );
+  const [filteredData, setFilteredData] = useState<CardState[]>([]);
   const { searchQuery, value } = useAppSelector((state) => state.search);
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
-  const filteredData = testData.filter((test) => {
-    return (
-      test.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      test.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  });
+
+  useEffect(() => {
+    dispatch(setIsLoading(true));
+    setTimeout(() => {
+      const filteredData = testData.filter((test) => {
+        return (
+          test.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          test.description.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      });
+      setFilteredData(filteredData);
+      dispatch(setIsLoading(false));
+    }, 300);
+  }, [value, searchQuery]);
   useEffect(() => {
     inputRef.current?.focus();
-  }, [value, searchQuery]);
+  }, [isLoading]);
   useEffect(() => {
     const bodyElement = document.body;
     if (isOpen) {
@@ -41,8 +56,10 @@ export default function Tests() {
         <div className={styles.tests__container}>
           <Search ref={inputRef}></Search>
           <div className={styles.tests__body}>
-            {filteredData.map((test) => {
-              return (
+            {isLoading ? (
+              [...new Array(8)].map((_, index) => <Skeleton key={index} />)
+            ) : filteredData.length > 0 ? (
+              filteredData.map((test) => (
                 <div
                   key={test.id}
                   className={styles.tests__item}
@@ -64,8 +81,10 @@ export default function Tests() {
                     className={styles.item__img}
                   />
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <h4 className="no_found">Oops, nothing was found :(</h4>
+            )}
           </div>
         </div>
       </div>

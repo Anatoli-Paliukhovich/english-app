@@ -1,0 +1,10 @@
+/* ToRem */
+/* Container */
+.rules {
+  padding: 6.25rem 0rem;
+}
+.rules__container {
+  max-width: 91.875rem;
+  padding: 0rem 0.9375rem;
+  margin: 0 auto;
+}

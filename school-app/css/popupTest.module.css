@@ -1,0 +1,114 @@
+/* ToRem */
+/* Container */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4705882353);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  z-index: 10;
+}
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.75rem 0.625rem 0.625rem 0.625rem;
+}
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-radius: 1.25rem;
+  position: relative;
+  background-color: rgb(225, 212, 201);
+  max-width: 50rem;
+  padding: 3.125rem 1.875rem 1.875rem;
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+  transform: perspective(37.5rem) translate(0px, -100%) rotateX(45deg);
+  width: 100%;
+}
+.open .popup__content {
+  opacity: 1;
+  transform: perspective(37.5rem) translate(0px, 0%) rotateX(0);
+}
+.popup__close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  transition: all ease 0.3s;
+  transform: scale(1);
+  cursor: pointer;
+}
+.popup__close img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.popup__close:hover {
+  transform: scale(1.04);
+}
+.popup__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1875rem;
+  color: #b0907a;
+}
+.popup__question {
+  font-weight: 600;
+}
+.popup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.popup__item {
+  border: 0.125rem solid rgb(102, 95, 85);
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.9375rem;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.popup__item:hover {
+  border: 0.125rem solid #b0907a;
+}
+.popup__item.correct {
+  background-color: rgba(76, 175, 79, 0.8039215686);
+  border: 0.125rem solid #4caf50;
+}
+.popup__item.incorrect {
+  background-color: rgba(244, 67, 54, 0.7333333333);
+  border: 0.125rem solid #f44336;
+}
+.popup__bottom {
+  align-self: center;
+  letter-spacing: 0.1875rem;
+  font-weight: 600;
+}
+.popup__result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+}
+.popup__score {
+  font-size: 1.875rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  color: rgb(102, 95, 85);
+}
+
+.btn {
+  display: inline-flex;
+  align-self: flex-end;
+  padding: 1.25rem;
+}

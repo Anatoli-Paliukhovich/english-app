@@ -7,6 +7,11 @@ type AccordionData = {
   url: string;
   title: string;
   description: string;
+  paragraf1: string;
+  paragraf2: string;
+  paragraf3: string;
+  paragraf4: string;
+  paragraf5: string;
 };
 type AccordionState = {
   data: AccordionData[];

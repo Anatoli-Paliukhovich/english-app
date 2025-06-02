@@ -1,0 +1,35 @@
+/* ToRem */
+/* Container */
+.btn, .btn_dsl {
+  display: inline-flex;
+  align-self: flex-end;
+  background-color: inherit;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 12.5rem;
+  max-height: 2.75rem;
+  border-radius: 3.125rem;
+  font-weight: 600;
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: rgb(64, 63, 61);
+  border: 0.0625rem solid rgb(102, 95, 85);
+  padding: 0.9375rem 2.375rem;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover, .btn_dsl:hover {
+  background: rgb(64, 63, 61);
+  color: rgb(225, 212, 201);
+  box-shadow: 0.0625rem 0.125rem 0.625rem rgb(64, 63, 61);
+}
+.btn_dsl {
+  color: rgba(64, 63, 61, 0.498);
+}
+.btn_dsl:hover {
+  background: inherit;
+  color: rgba(64, 63, 61, 0.498);
+  box-shadow: none;
+}

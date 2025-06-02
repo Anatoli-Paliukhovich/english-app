@@ -15,30 +15,32 @@ const Test = lazy(() => import("./pages/test/Test"));
 const App: React.FC = () => {
   return (
     <>
-      <Header></Header>
-      <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route
-          path="/test"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Test />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/materials"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Materials />
-            </Suspense>
-          }
-        />
-        <Route path="/olympiads" element={<Olimpiad />} />
-        <Route path="/exam" element={<Exam />} />
-        <Route path="/rules" element={<Rules />} />
-      </Routes>
-      <Footer></Footer>
+      <div className="wrapper">
+        <Header></Header>
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route
+            path="/test"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Test />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/materials"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Materials />
+              </Suspense>
+            }
+          />
+          <Route path="/olympiads" element={<Olimpiad />} />
+          <Route path="/exam" element={<Exam />} />
+          <Route path="/rules" element={<Rules />} />
+        </Routes>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

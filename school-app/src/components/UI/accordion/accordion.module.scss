@@ -75,6 +75,10 @@
     overflow: hidden;
     height: 0;
     &.open {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      line-height: 130%;
       padding: toRem(15);
       border-left: toRem(2) solid $text-accent;
       overflow: visible;
@@ -90,4 +94,24 @@
 video {
   width: 100%;
   object-fit: cover;
+}
+.p2,
+.p3,
+.p4,
+.p5 {
+  &:first-child {
+    font-weight: 600;
+    color: rgb(69, 171, 80);
+  }
+}
+.p1 {
+  font-weight: 600;
+}
+.p2 {
+}
+.p3 {
+}
+.p4 {
+}
+.p5 {
 }

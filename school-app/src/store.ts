@@ -5,6 +5,9 @@ import TestsReducer from "./features/tests/testsSlice";
 import SearchReducer from "./features/search/searchSlice";
 import MaterialsReducer from "./features/material/materialSlice";
 import OlympiadsReducer from "./features/olympiad/olympiadSlice";
+import RtReducer from "./features/rt/rtSlice";
+import CeReducer from "./features/ce/ceSlice";
+import SpecificationReducer from "./features/specification/specificationSlice";
 export const store = configureStore({
   reducer: {
     header: HeaderReducer,
@@ -13,6 +16,9 @@ export const store = configureStore({
     search: SearchReducer,
     materials: MaterialsReducer,
     olympiads: OlympiadsReducer,
+    rt: RtReducer,
+    ce: CeReducer,
+    specification: SpecificationReducer,
   },
 });
 

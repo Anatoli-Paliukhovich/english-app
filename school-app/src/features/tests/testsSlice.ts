@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { testCards } from "../../data";
 
-type CardState = {
+export type CardState = {
   id: number;
   title: string;
   description: string;
@@ -26,9 +26,11 @@ type TestsState = {
   result: boolean;
   currentTest: CardState;
   searchQuery: string;
+  isLoading: boolean;
 };
 
 const initialState: TestsState = {
+  isLoading: true,
   isOpen: false,
   testData: testCards,
   index: 0,
@@ -76,6 +78,9 @@ const testsSlice = createSlice({
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
+    setIsLoading: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
@@ -88,4 +93,5 @@ export const {
   setResult,
   setCurrentTest,
   setSearchQuery,
+  setIsLoading,
 } = testsSlice.actions;

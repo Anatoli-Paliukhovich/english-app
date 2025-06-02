@@ -7,6 +7,11 @@ type AccordionItemProps = {
   description: string;
   id: number;
   active: boolean;
+  paragraf1: string;
+  paragraf2: string;
+  paragraf3: string;
+  paragraf4: string;
+  paragraf5: string;
 };
 export default function AccordionItem({
   onToggle,
@@ -15,6 +20,11 @@ export default function AccordionItem({
   description,
   id,
   active,
+  paragraf1,
+  paragraf2,
+  paragraf3,
+  paragraf4,
+  paragraf5,
 }: AccordionItemProps) {
   return (
     <>
@@ -29,6 +39,11 @@ export default function AccordionItem({
           className={`${styles.accordion__ans} ${active ? styles.open : ""}`}
         >
           <div className={styles.accordion__ans_text}>{description}</div>
+          <div className={styles.p1}>{paragraf1}</div>
+          <div className={styles.p2}>{paragraf2}</div>
+          <div className={styles.p3}>{paragraf3}</div>
+          <div className={styles.p4}>{paragraf4}</div>
+          <div className={styles.p5}>{paragraf5}</div>
         </div>
       </li>
     </>

@@ -1,0 +1,43 @@
+/* ToRem */
+/* Container */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 2.5rem 0px;
+}
+.search__body {
+  position: relative;
+}
+.search .input {
+  border: 0.0625rem solid #665f55;
+  padding: 0.75rem 1.25rem 0.75rem 2.8125rem;
+  border-radius: 0.625rem;
+  font-size: 1.125rem;
+  background-color: inherit;
+  max-width: 18.75rem;
+}
+.search .input:focus {
+  border: 0.075rem solid #665f55;
+  box-shadow: 0.0625rem 0.0625rem 0.3125rem rgb(102, 95, 85);
+}
+.search .search__icon {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.4375rem;
+}
+.search .clear__icon {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  position: absolute;
+  top: 0.0625rem;
+  right: 0;
+  padding: 0.1875rem;
+  cursor: pointer;
+}
+.search .clear__icon:hover path {
+  fill: rgb(64, 63, 61);
+}

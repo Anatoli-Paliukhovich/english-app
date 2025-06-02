@@ -42,9 +42,7 @@ export const useAnimation = (animationStart: number = 4) => {
         }
       }
     };
-    setTimeout(() => {
-      handleScroll();
-    }, 300);
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -90,10 +88,7 @@ export const useRepeatAnimation = (animationStart: number = 4) => {
         setActiveRepeat(false);
       }
     };
-    setTimeout(() => {
-      handleScroll();
-    }, 300);
-
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

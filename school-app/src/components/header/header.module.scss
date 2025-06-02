@@ -231,3 +231,9 @@
     }
   }
 }
+._rightPadding {
+  padding: toRem(0) toRem(17) 0px 0px;
+  @media (max-width: toRem(992)) {
+    padding: 0px;
+  }
+}

@@ -5,7 +5,7 @@ import { BackToHome } from "./BackToHome";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { setBurger, setScrolled } from "../../features/header/headerSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { useRef } from "react";
 export default function Header() {
   const navigate = useNavigate();
   const { isBurger, isScrolled, links } = useAppSelector(
@@ -13,6 +13,17 @@ export default function Header() {
   );
   const dispatch = useAppDispatch();
   const location = useLocation();
+
+  const headerRef = useRef<HTMLDivElement>(null);
+  const { isOpen } = useAppSelector((state) => state.tests);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      headerRef.current.className = isOpen
+        ? `${styles.header__body} ${styles._rightPadding}`
+        : `${styles.header__body}`;
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +49,7 @@ export default function Header() {
         }`}
       >
         <div className={styles.header__container}>
-          <div className={styles.header__body}>
+          <div ref={headerRef} className={styles.header__body}>
             <Link
               to="/"
               className={styles.header__logo}

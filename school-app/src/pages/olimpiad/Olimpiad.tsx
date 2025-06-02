@@ -23,7 +23,7 @@ export default function Olimpiad() {
         </h2>
         <div className={styles.materials__row}>
           {olympiads.map((item) => {
-            return <MaterialCard key={item.id} material={item}></MaterialCard>;
+            return <MaterialCard key={item.id} {...item}></MaterialCard>;
           })}
         </div>
       </div>

@@ -1,6 +1,13 @@
 import styles from "./materialCard.module.scss";
 import type { Material } from "../../../features/material/materialSlice";
-export default function MaterialCard({ material }: { material: Material }) {
+export default function MaterialCard({
+  id,
+  title,
+  href,
+  src,
+  author1,
+  author2,
+}: Material) {
   const handleDownload = (href: string, filename: string) => {
     const tempLink = document.createElement("a");
     tempLink.href = href;
@@ -11,10 +18,10 @@ export default function MaterialCard({ material }: { material: Material }) {
   };
   return (
     <>
-      <div key={material.id} className={styles.materials__column}>
+      <div key={id} className={styles.materials__column}>
         <div className={styles.materials__item}>
           <button
-            onClick={() => handleDownload(material.href, material.title)}
+            onClick={() => handleDownload(href, title)}
             className={styles.materials__item_btn}
           >
             Download
@@ -22,17 +29,15 @@ export default function MaterialCard({ material }: { material: Material }) {
           <div className={styles.materials__item_image}>
             <img
               className={styles.materials__item_image_hover}
-              src={material.src}
-              alt={material.title}
+              src={src}
+              alt={title}
             />
           </div>
           <div className={styles.materials__item_body}>
-            <div className={styles.materials__item_subtitle}>
-              {material.title}
-            </div>
+            <div className={styles.materials__item_subtitle}>{title}</div>
             <div className={styles.materials__item_text}>
-              <p>{material.author1}</p>
-              <p>{material.author2}</p>
+              <p>{author1}</p>
+              <p>{author2}</p>
             </div>
           </div>
         </div>
